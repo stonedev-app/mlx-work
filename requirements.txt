@@ -19,7 +19,7 @@ mlx-lm==0.31.3
 mlx-metal==0.32.1
 numpy==2.5.2
 packaging==26.3
-protobuf==7.35.1
+protobuf==7.36.0
 Pygments==2.21.0
 PyYAML==6.0.3
 regex==2026.7.19
