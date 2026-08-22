@@ -1,0 +1,6 @@
+# venv(.venv/.gitignore でも自己除外されているが明示しておく)
+.venv/
+
+# AIエージェント用のローカルスキル置き場(hf skills add 等)
+.agents/
+.claude/skills/
