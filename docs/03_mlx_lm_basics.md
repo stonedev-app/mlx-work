@@ -72,5 +72,5 @@ uv run mlx_lm.chat --model mlx-community/Llama-3.2-3B-Instruct-4bit
 `hf`コマンドはコマンド体系がバージョンごとに変わりやすい(例: `huggingface-cli scan-cache` → `hf cache ls`)。プロジェクト直下で以下を実行しておくと、Claude Codeなどが常に最新の`hf`コマンド体系を参照できるようになる。
 
 ```bash
-uv run hf skills add --claude
+uv run hf skills add
 ```
