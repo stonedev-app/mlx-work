@@ -14,7 +14,7 @@ MLX用に変換・量子化済みのモデルは、主に`mlx-community`とい�
 
 **`hf` CLIで探す**:
 ```bash
-hf models list --author mlx-community --search llama --sort downloads --limit 20
+uv run hf models list --author mlx-community --search llama --sort downloads --limit 20
 ```
 - `--author mlx-community` — mlx-community組織のモデルに絞る
 - `--search <キーワード>` — モデル名で検索
@@ -34,19 +34,19 @@ hf models list --author mlx-community --search llama --sort downloads --limit 20
 ## インストール(ダウンロード)
 
 ```bash
-hf download mlx-community/Llama-3.2-3B-Instruct-4bit
+uv run hf download mlx-community/Llama-3.2-3B-Instruct-4bit
 ```
 
 ## インストール済みモデルの一覧表示
 
 ```bash
-hf cache list
+uv run hf cache list
 ```
 
 ID・サイズなどを省略せず全て表示したい場合:
 
 ```bash
-hf cache list --no-truncate
+uv run hf cache list --no-truncate
 ```
 
 `ID`列に表示される文字列(例: `model/mlx-community/Llama-3.2-3B-Instruct-4bit`)が、削除コマンドで指定するターゲットになる。
@@ -54,15 +54,15 @@ hf cache list --no-truncate
 ## モデルの削除
 
 ```bash
-hf cache rm model/mlx-community/Llama-3.2-3B-Instruct-4bit
+uv run hf cache rm model/mlx-community/Llama-3.2-3B-Instruct-4bit
 ```
 
-削除後、`hf cache list`を実行すると `No results found.` と表示され、キャッシュが空になったことを確認できる。
+削除後、`uv run hf cache list`を実行すると `No results found.` と表示され、キャッシュが空になったことを確認できる。
 
 ## モデルとチャットする
 
 ```bash
-mlx_lm.chat --model mlx-community/Llama-3.2-3B-Instruct-4bit
+uv run mlx_lm.chat --model mlx-community/Llama-3.2-3B-Instruct-4bit
 ```
 
 指定したモデルがキャッシュに無ければ自動でダウンロードされ、あればそのまま使われる。実行するとREPL形式のプロンプトが起動し、対話を続けられる。
@@ -72,5 +72,5 @@ mlx_lm.chat --model mlx-community/Llama-3.2-3B-Instruct-4bit
 `hf`コマンドはコマンド体系がバージョンごとに変わりやすい(例: `huggingface-cli scan-cache` → `hf cache ls`)。プロジェクト直下で以下を実行しておくと、Claude Codeなどが常に最新の`hf`コマンド体系を参照できるようになる。
 
 ```bash
-hf skills add --claude
+uv run hf skills add --claude
 ```
